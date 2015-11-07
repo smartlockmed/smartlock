@@ -28,6 +28,8 @@ include_once("../php/Lock.php");
             
             function showCodes(lockSerial)
             {             
+                document.getElementById("lockSerial").value = lockSerial;
+            
                 var request = new XMLHttpRequest();
                 request.onreadystatechange = function() 
                 {
@@ -136,7 +138,10 @@ include_once("../php/Lock.php");
                                 <tfoot>                  
                                     <tr>
                                         <td>
-                                            <button class="btn btn-primary" onclick='generateCode(selectLock())'>Generate Code</button>                       
+                                            <form method="post" action="codeGeneration.php">
+                                                <button type="submit" name="submit" class="btn btn-primary">Generator</button>  
+                                                <input type="text" name="lockSerial" id="lockSerial" hidden>
+                                            </form>
                                         </td>
                                     </tr>
                                 </tfoot>

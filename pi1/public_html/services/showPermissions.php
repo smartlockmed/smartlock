@@ -33,14 +33,14 @@ include_once("../php/Permission.php");
                     if (request.readyState == 4 && request.status == 200) 
                     {                        
                         var response = request.responseText;                       
-                        var responses = response.split("|");
-                        var startDateTime = responses[3].split(" ");
-                        var endDateTime = responses[4].split(" ");                        
+                        var responses = response.split("#");
+                        var startDateTime = responses[2].split(" ");
+                        var endDateTime = responses[3].split(" ");                        
                                       
-                        document.getElementById("recipient").value = responses[1];
-                        document.getElementById("lock").value = responses[2];
-                        document.getElementById("startDateHour").value = startDateTime[1] + "T" + startDateTime[2];
-                        document.getElementById("endDateHour").value = endDateTime[1] + "T" + endDateTime[2];   
+                        document.getElementById("recipient").value = responses[0];
+                        document.getElementById("lock").value = responses[1];
+                        document.getElementById("startDateHour").value = startDateTime[0] + "T" + startDateTime[1];
+                        document.getElementById("endDateHour").value = endDateTime[0] + "T" + endDateTime[1];   
                     }
                 }                
                 request.open("GET", "getPermission.php?id=" + id, true);

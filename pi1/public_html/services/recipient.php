@@ -27,7 +27,9 @@ include_once("../php/Permission.php");
             }
             
             function showCodes(permissionId)
-            {             
+            {      
+                document.getElementById("permissionId").value = permissionId;
+                
                 var request = new XMLHttpRequest();
                 request.onreadystatechange = function() 
                 {
@@ -137,7 +139,10 @@ include_once("../php/Permission.php");
                                 <tfoot>                  
                                     <tr>
                                         <td>
-                                            <button class="btn btn-primary" onclick='generateCode(selectPermission())'>Generate Code</button>                       
+                                             <form method="post" action="codeGenerationRecipient.php">
+                                                <button type="submit" name="submit" class="btn btn-primary">Generator</button>  
+                                                <input type="text" name="permissionId" id="permissionId" hidden>
+                                            </form>
                                         </td>
                                     </tr>
                                 </tfoot>

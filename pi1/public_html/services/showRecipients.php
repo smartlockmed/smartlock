@@ -33,18 +33,18 @@ include_once("../php/Recipient.php");
                     if (request.readyState == 4 && request.status == 200) 
                     {                        
                         var response = request.responseText;                       
-                        var responses = response.split("|");
+                        var responses = response.split("#");
                         
-                        document.getElementById("identification").value = responses[1];
-                        document.getElementById("firstName").value = responses[2];
-                        document.getElementById("secondName").value = responses[3];
-                        document.getElementById("firstSurname").value = responses[4];
-                        document.getElementById("secondSurname").value = responses[5];
-                        document.getElementById("bornDate").value = responses[6];
-                        document.getElementById("gender").value = responses[7];
-                        document.getElementById("cellPhone").value = responses[8];
-                        document.getElementById("email").value = responses[9];
-                        document.getElementById("address").value = responses[10];                        
+                        document.getElementById("identification").value = responses[0];
+                        document.getElementById("firstName").value = responses[1];
+                        document.getElementById("secondName").value = responses[2];
+                        document.getElementById("firstSurname").value = responses[3];
+                        document.getElementById("secondSurname").value = responses[4];
+                        document.getElementById("bornDate").value = responses[5];
+                        document.getElementById("gender").value = responses[6];
+                        document.getElementById("cellPhone").value = responses[7];
+                        document.getElementById("email").value = responses[8];
+                        document.getElementById("address").value = responses[9];                        
                     }
                 }                
                 request.open("GET", "getRecipient.php?identification=" + identification, true);
