@@ -9,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Admin</title>
-        <link href="../styles/styles.css" rel="stylesheet" type="text/css">
+        <link href="../styles/new.css" rel="stylesheet" type="text/css">
         <script>
             function selectOwner()
             {
